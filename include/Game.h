@@ -31,7 +31,8 @@ class Game{
 
         Mesh *mesh;
 
-        Player *player;
+        std::vector<Player> objs;
+        //GameObject *player;
 
         float dt=0.0f;
         float lastTime=0.0f;

@@ -4,7 +4,7 @@ float lerp(float a, float b, float f){
     return a+f*(b-a);
 }
 
-Player::Player(Shader *shader, Cam *cam, float x, float y){
+Player::Player(Shader *shader, Cam *cam, float x, float y):GameObject(shader, cam){
     this->shader=shader;
     this->cam=cam;
 

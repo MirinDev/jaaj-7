@@ -1,16 +1,16 @@
 #ifndef PLAYER_H
 #define PLAYER_H
-#include <Mesh.h>
+#include <GameObject.h>
 #include <parent.h>
 #include <SpriteSheet.h>
 
 #include <Key.h>
 
-class Player{
+class Player:public GameObject{
     public:
         Player(Shader *shader, Cam *cam, float x, float y);
-        void render();
-        void update(float dt);
+        void render() override;
+        void update(float dt) override;
     private:
         void move(float dt);
         void moveCam();

@@ -6,6 +6,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(code 
     src/Main.cpp
     src/Game.cpp
+    src/GameObject.cpp
     src/Player.cpp
     src/Block.cpp
 
