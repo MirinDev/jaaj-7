@@ -16,7 +16,7 @@ Player::Player(Shader *shader, Cam *cam, float x, float y):GameObject(shader, ca
     };
 
     this->idle=new SpriteSheet(shader, cam, texturesIdle, Sheet{0, 0, 32, 32, 0.25f});
-    this->run=new SpriteSheet(shader, cam, texturesRun, Sheet{0, 0, 32, 32, 0.1f});
+    this->run=new SpriteSheet(shader, cam, texturesRun, Sheet{0, 0, 32, 32, 0.14f});
 }
 
 void Player::render(){

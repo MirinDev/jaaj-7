@@ -102,22 +102,9 @@ CMakeFiles/mini.dir/src/Game.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mini.dir/src/Game.cpp.s"
 	/bin/clang++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/jose/Área de Trabalho/jaaj 7/src/Game.cpp" -o CMakeFiles/mini.dir/src/Game.cpp.s
 
-CMakeFiles/mini.dir/src/GameObject.cpp.o: CMakeFiles/mini.dir/flags.make
-CMakeFiles/mini.dir/src/GameObject.cpp.o: ../src/GameObject.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/jose/Área de Trabalho/jaaj 7/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/mini.dir/src/GameObject.cpp.o"
-	/bin/clang++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mini.dir/src/GameObject.cpp.o -c "/home/jose/Área de Trabalho/jaaj 7/src/GameObject.cpp"
-
-CMakeFiles/mini.dir/src/GameObject.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mini.dir/src/GameObject.cpp.i"
-	/bin/clang++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/jose/Área de Trabalho/jaaj 7/src/GameObject.cpp" > CMakeFiles/mini.dir/src/GameObject.cpp.i
-
-CMakeFiles/mini.dir/src/GameObject.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mini.dir/src/GameObject.cpp.s"
-	/bin/clang++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/jose/Área de Trabalho/jaaj 7/src/GameObject.cpp" -o CMakeFiles/mini.dir/src/GameObject.cpp.s
-
 CMakeFiles/mini.dir/src/Player.cpp.o: CMakeFiles/mini.dir/flags.make
 CMakeFiles/mini.dir/src/Player.cpp.o: ../src/Player.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/jose/Área de Trabalho/jaaj 7/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/mini.dir/src/Player.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/jose/Área de Trabalho/jaaj 7/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/mini.dir/src/Player.cpp.o"
 	/bin/clang++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mini.dir/src/Player.cpp.o -c "/home/jose/Área de Trabalho/jaaj 7/src/Player.cpp"
 
 CMakeFiles/mini.dir/src/Player.cpp.i: cmake_force
@@ -130,7 +117,7 @@ CMakeFiles/mini.dir/src/Player.cpp.s: cmake_force
 
 CMakeFiles/mini.dir/src/Block.cpp.o: CMakeFiles/mini.dir/flags.make
 CMakeFiles/mini.dir/src/Block.cpp.o: ../src/Block.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/jose/Área de Trabalho/jaaj 7/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/mini.dir/src/Block.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/jose/Área de Trabalho/jaaj 7/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/mini.dir/src/Block.cpp.o"
 	/bin/clang++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mini.dir/src/Block.cpp.o -c "/home/jose/Área de Trabalho/jaaj 7/src/Block.cpp"
 
 CMakeFiles/mini.dir/src/Block.cpp.i: cmake_force
@@ -143,7 +130,7 @@ CMakeFiles/mini.dir/src/Block.cpp.s: cmake_force
 
 CMakeFiles/mini.dir/src/glad.c.o: CMakeFiles/mini.dir/flags.make
 CMakeFiles/mini.dir/src/glad.c.o: ../src/glad.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/jose/Área de Trabalho/jaaj 7/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/mini.dir/src/glad.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/jose/Área de Trabalho/jaaj 7/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/mini.dir/src/glad.c.o"
 	/bin/clang-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mini.dir/src/glad.c.o -c "/home/jose/Área de Trabalho/jaaj 7/src/glad.c"
 
 CMakeFiles/mini.dir/src/glad.c.i: cmake_force
@@ -156,7 +143,7 @@ CMakeFiles/mini.dir/src/glad.c.s: cmake_force
 
 CMakeFiles/mini.dir/src/std_image.cpp.o: CMakeFiles/mini.dir/flags.make
 CMakeFiles/mini.dir/src/std_image.cpp.o: ../src/std_image.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/jose/Área de Trabalho/jaaj 7/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/mini.dir/src/std_image.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/jose/Área de Trabalho/jaaj 7/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/mini.dir/src/std_image.cpp.o"
 	/bin/clang++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mini.dir/src/std_image.cpp.o -c "/home/jose/Área de Trabalho/jaaj 7/src/std_image.cpp"
 
 CMakeFiles/mini.dir/src/std_image.cpp.i: cmake_force
@@ -171,7 +158,6 @@ CMakeFiles/mini.dir/src/std_image.cpp.s: cmake_force
 mini_OBJECTS = \
 "CMakeFiles/mini.dir/src/Main.cpp.o" \
 "CMakeFiles/mini.dir/src/Game.cpp.o" \
-"CMakeFiles/mini.dir/src/GameObject.cpp.o" \
 "CMakeFiles/mini.dir/src/Player.cpp.o" \
 "CMakeFiles/mini.dir/src/Block.cpp.o" \
 "CMakeFiles/mini.dir/src/glad.c.o" \
@@ -182,7 +168,6 @@ mini_EXTERNAL_OBJECTS =
 
 mini: CMakeFiles/mini.dir/src/Main.cpp.o
 mini: CMakeFiles/mini.dir/src/Game.cpp.o
-mini: CMakeFiles/mini.dir/src/GameObject.cpp.o
 mini: CMakeFiles/mini.dir/src/Player.cpp.o
 mini: CMakeFiles/mini.dir/src/Block.cpp.o
 mini: CMakeFiles/mini.dir/src/glad.c.o
@@ -190,7 +175,7 @@ mini: CMakeFiles/mini.dir/src/std_image.cpp.o
 mini: CMakeFiles/mini.dir/build.make
 mini: /usr/lib/x86_64-linux-gnu/libGL.so
 mini: CMakeFiles/mini.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/jose/Área de Trabalho/jaaj 7/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable mini"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/jose/Área de Trabalho/jaaj 7/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable mini"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mini.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

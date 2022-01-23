@@ -6,20 +6,8 @@
 #include <sstream>
 #include <iostream>
 #include <cerrno>
+#include <file.h>
 
-static std::string openFile(const char *file){
-	std::ifstream in(file, std::ios::binary);
-	if(in){
-		std::string contents;
-		in.seekg(0, std::ios::end);
-		contents.resize(in.tellg());
-		in.seekg(0, std::ios::beg);
-		in.read(&contents[0], contents.size());
-		in.close();
-		return(contents);
-	}
-	throw(errno);
-}
 
 class Shader{
     public:

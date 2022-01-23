@@ -1,7 +1,7 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 #include <GameObject.h>
-#include <parent.h>
+#include <file.h>
 #include <SpriteSheet.h>
 
 #include <Key.h>
@@ -9,8 +9,8 @@
 class Player:public GameObject{
     public:
         Player(Shader *shader, Cam *cam, float x, float y);
-        void render() override;
-        void update(float dt) override;
+        void render();
+        void update(float dt);
     private:
         void move(float dt);
         void moveCam();
@@ -23,7 +23,6 @@ class Player:public GameObject{
         SpriteSheet *run;
 
         std::string state="idle";
-        glm::vec3 pos=glm::vec3(0.0f, 0.0f, 0.0f);
         float spd=6.0f;
         float grv=6.0f;
         int jump=0;

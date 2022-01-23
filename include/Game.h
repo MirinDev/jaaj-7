@@ -7,11 +7,12 @@
 
 #include <Mesh.h>
 #include <Plane.h>
-#include <parent.h>
+#include <file.h>
 
 #include <SpriteSheet.h>
 
 #include <Player.h>
+#include <Block.h>
 
 class Game{
     public:
@@ -31,8 +32,7 @@ class Game{
 
         Mesh *mesh;
 
-        std::vector<Player> objs;
-        //GameObject *player;
+        std::vector<GameObject*> objs;
 
         float dt=0.0f;
         float lastTime=0.0f;

@@ -6,6 +6,12 @@
 
 #IncludeRegexTransform: 
 
+../include/Block.h
+GameObject.h
+-
+Plane.h
+-
+
 ../include/Game.h
 iostream
 -
@@ -19,11 +25,13 @@ Mesh.h
 -
 Plane.h
 -
-parent.h
+file.h
 -
 SpriteSheet.h
 -
 Player.h
+-
+Block.h
 -
 
 ../include/GameObject.h
@@ -41,7 +49,7 @@ stdint.h
 ../include/Player.h
 GameObject.h
 -
-parent.h
+file.h
 -
 SpriteSheet.h
 -
@@ -117,6 +125,8 @@ iostream
 -
 cerrno
 -
+file.h
+-
 
 ../include/engine/SpriteSheet.h
 glad/glad.h
@@ -150,6 +160,12 @@ vector
 glm/glm.hpp
 -
 glad/glad.h
+-
+
+../include/engine/file.h
+iostream
+-
+filesystem
 -
 
 ../include/glad/glad.h
@@ -1654,12 +1670,6 @@ detail/setup.hpp
 detail/func_vector_relational.inl
 ../include/glm/detail/func_vector_relational.inl
 
-../include/parent.h
-iostream
--
-filesystem
--
-
 ../include/std/std_image.h
 stb_image.h
 ../include/std/stb_image.h
@@ -1692,11 +1702,19 @@ intrin.h
 arm_neon.h
 -
 
+/home/jose/Área de Trabalho/jaaj 7/src/Block.cpp
+Block.h
+-
+
 /home/jose/Área de Trabalho/jaaj 7/src/Game.cpp
 Game.h
 -
 
 /home/jose/Área de Trabalho/jaaj 7/src/Main.cpp
 Game.h
+-
+
+/home/jose/Área de Trabalho/jaaj 7/src/Player.cpp
+Player.h
 -
 

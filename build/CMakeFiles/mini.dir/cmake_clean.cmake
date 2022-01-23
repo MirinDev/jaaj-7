@@ -1,7 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/mini.dir/src/Block.cpp.o"
   "CMakeFiles/mini.dir/src/Game.cpp.o"
-  "CMakeFiles/mini.dir/src/GameObject.cpp.o"
   "CMakeFiles/mini.dir/src/Main.cpp.o"
   "CMakeFiles/mini.dir/src/Player.cpp.o"
   "CMakeFiles/mini.dir/src/glad.c.o"

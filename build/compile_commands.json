@@ -11,11 +11,6 @@
 },
 {
   "directory": "/home/jose/Área de Trabalho/jaaj 7/build",
-  "command": "/bin/clang++-13  -I\"/home/jose/Área de Trabalho/jaaj 7/mini\" -I\"/home/jose/Área de Trabalho/jaaj 7/include\" -I\"/home/jose/Área de Trabalho/jaaj 7/include/engine\" -I/usr/local/include/SDL2 -g -std=gnu++17 -o CMakeFiles/mini.dir/src/GameObject.cpp.o -c \"/home/jose/Área de Trabalho/jaaj 7/src/GameObject.cpp\"",
-  "file": "/home/jose/Área de Trabalho/jaaj 7/src/GameObject.cpp"
-},
-{
-  "directory": "/home/jose/Área de Trabalho/jaaj 7/build",
   "command": "/bin/clang++-13  -I\"/home/jose/Área de Trabalho/jaaj 7/mini\" -I\"/home/jose/Área de Trabalho/jaaj 7/include\" -I\"/home/jose/Área de Trabalho/jaaj 7/include/engine\" -I/usr/local/include/SDL2 -g -std=gnu++17 -o CMakeFiles/mini.dir/src/Player.cpp.o -c \"/home/jose/Área de Trabalho/jaaj 7/src/Player.cpp\"",
   "file": "/home/jose/Área de Trabalho/jaaj 7/src/Player.cpp"
 },
