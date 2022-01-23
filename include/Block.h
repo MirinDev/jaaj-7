@@ -5,7 +5,7 @@
 
 class Block: public GameObject{
     public:
-        Block(Shader *shader, Cam *cam);
+        Block(Shader *shader, Cam *cam, float x, float y);
         void render() override;
     private:
         Mesh *mesh;

@@ -9,10 +9,7 @@
 #include <Plane.h>
 #include <file.h>
 
-#include <SpriteSheet.h>
-
-#include <Player.h>
-#include <Block.h>
+#include <Map.h>
 
 class Game{
     public:
@@ -32,7 +29,7 @@ class Game{
 
         Mesh *mesh;
 
-        std::vector<GameObject*> objs;
+        Map *map;
 
         float dt=0.0f;
         float lastTime=0.0f;

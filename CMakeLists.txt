@@ -8,6 +8,7 @@ set(code
     src/Game.cpp
     src/Player.cpp
     src/Block.cpp
+    src/Map.cpp
 
     src/glad.c
     src/std_image.cpp

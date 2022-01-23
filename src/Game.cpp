@@ -33,8 +33,7 @@ Game::Game(int width, int height, const char *title, bool resize){
     
     this->mesh=new Mesh(createPlane(textures[0].getWidth()/textures[0].getHeight(), 1.0f, 0.0f, 0.0f, 1.0f, 1.0f), planeI, textures);
 
-    this->objs.push_back((new Player(shader, cam, 0.0f, 0.0f)));
-    this->objs.push_back((new Block(shader, cam)));
+    this->map=new Map(("."+bar+"res"+bar+"map.txt").c_str(), shader, cam);
 
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_MULTISAMPLE);
@@ -66,9 +65,7 @@ void Game::render(){
     glClearColor(0.01f, 0.1f, 0.18f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-    for(int i=0; i<objs.size(); i++){
-        this->objs[i]->render();
-    }
+    this->map->render();
     glm::mat4 model=glm::mat4(1.0f);
     model=glm::translate(model, glm::vec3(0.0f, 0.0f, 1.0f));
     glUniformMatrix4fv(glGetUniformLocation(this->shader->getID(), "model"), 1, GL_FALSE, glm::value_ptr(model));
@@ -78,9 +75,7 @@ void Game::render(){
 }
 
 void Game::update(){
-    for(int i=0; i<objs.size(); i++){
-        this->objs[i]->update(dt);
-    }
+    this->map->update(dt);
     
     //this->cam->update(this->dt, this->window);
 

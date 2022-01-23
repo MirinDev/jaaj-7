@@ -21,6 +21,11 @@
 },
 {
   "directory": "/home/jose/Área de Trabalho/jaaj 7/build",
+  "command": "/bin/clang++-13  -I\"/home/jose/Área de Trabalho/jaaj 7/mini\" -I\"/home/jose/Área de Trabalho/jaaj 7/include\" -I\"/home/jose/Área de Trabalho/jaaj 7/include/engine\" -I/usr/local/include/SDL2 -g -std=gnu++17 -o CMakeFiles/mini.dir/src/Map.cpp.o -c \"/home/jose/Área de Trabalho/jaaj 7/src/Map.cpp\"",
+  "file": "/home/jose/Área de Trabalho/jaaj 7/src/Map.cpp"
+},
+{
+  "directory": "/home/jose/Área de Trabalho/jaaj 7/build",
   "command": "/bin/clang-13  -I\"/home/jose/Área de Trabalho/jaaj 7/mini\" -I\"/home/jose/Área de Trabalho/jaaj 7/include\" -I\"/home/jose/Área de Trabalho/jaaj 7/include/engine\" -I/usr/local/include/SDL2 -g -o CMakeFiles/mini.dir/src/glad.c.o -c \"/home/jose/Área de Trabalho/jaaj 7/src/glad.c\"",
   "file": "/home/jose/Área de Trabalho/jaaj 7/src/glad.c"
 },
