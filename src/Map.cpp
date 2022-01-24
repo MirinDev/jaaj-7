@@ -18,6 +18,25 @@ Map::Map(const char *file, Shader *shader, Cam *cam){
         if(process=="4"){
             this->objs.push_back((new Block(shader, cam, x, -y+5, 2)));
         }
+        if(process=="5"){
+            this->objs.push_back((new Block(shader, cam, x, -y+5, 3)));
+        }
+        if(process=="6"){
+            this->objs.push_back((new Block(shader, cam, x, -y+5, 4)));
+        }
+        if(process=="7"){
+            this->objs.push_back((new Block(shader, cam, x, -y+5, 5)));
+        }
+        if(process=="8"){
+            this->objs.push_back((new Block(shader, cam, x, -y+5, 6)));
+        }
+        if(process=="9"){
+            this->objs.push_back((new Block(shader, cam, x, -y+5, 7)));
+        }
+
+        if(process=="4"){
+            this->objs.push_back((new Block(shader, cam, x, -y+5, 2)));
+        }
         
         if(process=="\n"){
             x=0;
@@ -37,6 +56,11 @@ void Map::render(){
 
 void Map::update(float dt){
     for(int i=0; i<objs.size(); i++){
-        this->objs[i]->update(dt);
+        if(this->objs[i]->type=="block"){
+            this->objs[i]->update(dt);
+        }
+        if(this->objs[i]->type=="player"){
+            this->objs[i]->update(dt);
+        }
     }
 }

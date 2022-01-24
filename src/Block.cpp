@@ -18,6 +18,23 @@ Block::Block(Shader *shader, Cam *cam, float x, float y, int tile):GameObject(sh
     if(tile==2){
         plane=createPlane(1.0f, 1.0f, 0.0f, (1.0f/3.0f)*2.0f, 1.0f/3.0f, 1.0f);
     }
+    
+    if(tile==3){
+        plane=createPlane(1.0f, 1.0f, (1.0f/3.0f)*2.0f, 1.0f/3.0f, 1.0f, (1.0f/3.0f)*2.0f);
+    }
+    if(tile==4){
+        plane=createPlane(1.0f, 1.0f, 1.0f/3.0f, 1.0f/3.0f, (1.0f/3.0f)*2.0f, (1.0f/3.0f)*2.0f);
+    }
+    if(tile==5){
+        plane=createPlane(1.0f, 1.0f, 0.0f, 1.0f/3.0f, 1.0f/3.0f, (1.0f/3.0f)*2.0f);
+    }
+
+    if(tile==6){
+        plane=createPlane(1.0f, 1.0f, (1.0f/3.0f)*2.0f, 0.0f, 1.0f, 1.0f/3.0f);
+    }
+    if(tile==7){
+        plane=createPlane(1.0f, 1.0f, 1.0f/3.0f, 0.0f, (1.0f/3.0f)*2.0f, 1.0f/3.0f);
+    }
 
     this->mesh=new Mesh(plane, planeI, textures);
     this->pos.x=x;
