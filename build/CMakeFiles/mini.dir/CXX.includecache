@@ -24,24 +24,6 @@ inttypes.h
 stdint.h
 -
 
-../include/Map.h
-Player.h
--
-Block.h
--
-file.h
--
-
-../include/Player.h
-GameObject.h
--
-file.h
--
-SpriteSheet.h
--
-Key.h
--
-
 ../include/engine/Cam.h
 iostream
 -
@@ -112,16 +94,6 @@ iostream
 cerrno
 -
 file.h
--
-
-../include/engine/SpriteSheet.h
-glad/glad.h
--
-Mesh.h
--
-Plane.h
--
-iostream
 -
 
 ../include/engine/Texture.h
@@ -1688,7 +1660,7 @@ intrin.h
 arm_neon.h
 -
 
-/home/jose/Área de Trabalho/jaaj 7/src/Map.cpp
-Map.h
+/home/jose/Área de Trabalho/jaaj 7/src/Block.cpp
+Block.h
 -
 

@@ -17,6 +17,9 @@ Player::Player(Shader *shader, Cam *cam, float x, float y):GameObject(shader, ca
 
     this->idle=new SpriteSheet(shader, cam, texturesIdle, Sheet{0, 0, 32, 32, 0.25f});
     this->run=new SpriteSheet(shader, cam, texturesRun, Sheet{0, 0, 32, 32, 0.14f});
+
+    this->pos.x=x;
+    this->pos.y=y;
 }
 
 void Player::render(){
@@ -79,9 +82,9 @@ void Player::moveCam(){
 }
 
 void Player::updateState(){
-    if(this->hspd!=0.0f){
-        this->state="run";
-    }else{
+    if(this->hspd<0.1f && this->hspd>-0.1f){
         this->state="idle";
+    }else{
+        this->state="run";
     }
 }

@@ -5,21 +5,22 @@ Map::Map(const char *file, Shader *shader, Cam *cam){
     int x=0;
     int y=0;
     for(int i=0; i<result.size(); i++){
-        if(result[i]=="1"){
-            this->objs.push_back((new Player(shader, cam, x, y)));
+        std::string process(1, result[i]);
+        if(process=="1"){
+            this->objs.push_back((new Player(shader, cam, x, -y+5)));
+        }
+        if(process=="3"){
+            this->objs.push_back((new Block(shader, cam, x, -y+5, 1)));
         }
         
-        if(result[i]=="\n"){
+        if(process=="\n"){
             x=0;
             y++;
         }
-        if(result[i]==" "){
+        if(process==" "){
             x++;
         }
     }
-    
-    //this->objs.push_back((new Player(shader, cam, 0.0f, 0.0f)));
-    //this->objs.push_back((new Block(shader, cam, 0.0f, 1.0f)));
 }
 
 void Map::render(){
