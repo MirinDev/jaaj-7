@@ -17,21 +17,15 @@ Game::Game(int width, int height, const char *title, bool resize){
     this->cam->pos.z=-4.0f;
     this->shader=new Shader(("."+bar+"res"+bar+"image.frag").c_str(), ("."+bar+"res"+bar+"image.vert").c_str());
 
-    std::vector<Texture> texturesRun{
-        Texture(("."+bar+"res"+bar+"run.png").c_str(), GL_REPEAT, GL_NEAREST, 0, "tex")
-    };
-    std::vector<Texture> texturesIdle{
-        Texture(("."+bar+"res"+bar+"idle.png").c_str(), GL_REPEAT, GL_NEAREST, 0, "tex")
-    };
-    std::vector<Texture> texturesBase{
-        Texture(("."+bar+"res"+bar+"base.png").c_str(), GL_REPEAT, GL_NEAREST, 0, "tex")
-    };
-
     std::vector<Texture> textures{
         Texture(("."+bar+"res"+bar+"engine.png").c_str(), GL_REPEAT, GL_LINEAR, 0, "tex")
     };
+    std::vector<Texture> textureBack{
+        Texture(("."+bar+"res"+bar+"back.png").c_str(), GL_REPEAT, GL_NEAREST, 0, "tex")
+    };
     
     this->mesh=new Mesh(createPlane(textures[0].getWidth()/textures[0].getHeight(), 1.0f, 0.0f, 0.0f, 1.0f, 1.0f), planeI, textures);
+    this->mesh2=new Mesh(createPlane(textureBack[0].getWidth()/textureBack[0].getHeight()*10.0f, 1.0f, 0.0f, 0.0f, 10.0f, 1.0f), planeI, textureBack);
 
     this->map=new Map(("."+bar+"res"+bar+"map.txt").c_str(), shader, cam);
 
@@ -67,9 +61,15 @@ void Game::render(){
 
     this->map->render();
     glm::mat4 model=glm::mat4(1.0f);
-    model=glm::translate(model, glm::vec3(0.0f, 0.0f, 1.0f));
+    model=glm::translate(model, glm::vec3(6.0f, 0.0f, 0.5f));
     glUniformMatrix4fv(glGetUniformLocation(this->shader->getID(), "model"), 1, GL_FALSE, glm::value_ptr(model));
     this->mesh->draw(shader, cam);
+    glm::mat4 model2=glm::mat4(1.0f);
+    model2=glm::translate(model2, glm::vec3(6.0f, 0.0f, 1.0f));
+    model2=glm::scale(model2, glm::vec3(5.0f, 5.0f, 1.0f));
+    glUniformMatrix4fv(glGetUniformLocation(this->shader->getID(), "model"), 1, GL_FALSE, glm::value_ptr(model2));
+    this->mesh2->draw(shader, cam);
+
 
     SDL_GL_SwapWindow(this->window);
 }

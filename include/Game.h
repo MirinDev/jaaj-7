@@ -28,6 +28,7 @@ class Game{
         Shader *shader;
 
         Mesh *mesh;
+        Mesh *mesh2;
 
         Map *map;
 

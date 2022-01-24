@@ -9,6 +9,7 @@ class GameObject{
         virtual void render(){};
 
         glm::vec3 pos=glm::vec3(0.0f, 0.0f, 0.0f);
+        std::string type="none";
 };
 
 #endif

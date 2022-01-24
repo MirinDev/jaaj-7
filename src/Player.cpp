@@ -20,6 +20,7 @@ Player::Player(Shader *shader, Cam *cam, float x, float y):GameObject(shader, ca
 
     this->pos.x=x;
     this->pos.y=y;
+    this->type="player";
 }
 
 void Player::render(){
