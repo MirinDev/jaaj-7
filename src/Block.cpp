@@ -9,8 +9,14 @@ Block::Block(Shader *shader, Cam *cam, float x, float y, int tile):GameObject(sh
     };
 
     std::vector<Vertex> plane;
+    if(tile==0){
+        plane=createPlane(1.0f, 1.0f, (1.0f/3.0f)*2.0f, (1.0f/3.0f)*2.0f, 1.0f, 1.0f);
+    }
     if(tile==1){
-        plane=createPlane(1.0f, 1.0f, 1.0f/3.0f, 0.0f, (1.0f/3.0f)*2.0f, (1.0f/3.0f)*2.0f);
+        plane=createPlane(1.0f, 1.0f, (1.0f/3.0f), (1.0f/3.0f)*2.0f, (1.0f/3.0f)*2.0f, 1.0f);
+    }
+    if(tile==2){
+        plane=createPlane(1.0f, 1.0f, 0.0f, (1.0f/3.0f)*2.0f, 1.0f/3.0f, 1.0f);
     }
 
     this->mesh=new Mesh(plane, planeI, textures);
