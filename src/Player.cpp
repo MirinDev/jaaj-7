@@ -9,10 +9,10 @@ Player::Player(Shader *shader, Cam *cam, float x, float y):GameObject(shader, ca
     this->cam=cam;
 
     std::vector<Texture> texturesRun{
-        Texture(("."+bar+"res"+bar+"run.png").c_str(), GL_CLAMP_TO_BORDER, GL_NEAREST, 0, "tex")
+        Texture(("."+bar+"res"+bar+"run1.png").c_str(), GL_CLAMP_TO_BORDER, GL_NEAREST, 0, "tex")
     };
     std::vector<Texture> texturesIdle{
-        Texture(("."+bar+"res"+bar+"idle.png").c_str(), GL_CLAMP_TO_BORDER, GL_NEAREST, 0, "tex")
+        Texture(("."+bar+"res"+bar+"idle1.png").c_str(), GL_CLAMP_TO_BORDER, GL_NEAREST, 0, "tex")
     };
 
     this->idle=new SpriteSheet(shader, cam, texturesIdle, Sheet{0, 0, 32, 32, 0.25f});
@@ -20,6 +20,10 @@ Player::Player(Shader *shader, Cam *cam, float x, float y):GameObject(shader, ca
 
     this->pos.x=x;
     this->pos.y=y;
+    this->size.x=0.3f;
+    this->size.y=0.5f;
+
+    this->type="player";
 }
 
 void Player::render(){
@@ -66,12 +70,40 @@ void Player::update(float dt){
 }
 
 void Player::physics(std::vector<GameObject*> objs, float dt){
-    if(this->pos.y+this->vspd*dt<-1.0f){
-        this->jump=this->maxJump;
-        this->vspd=0.0f;
-    }
+    for(int i=0; i<objs.size(); i++){
+        GameObject *walla=objs[i];
+        if(walla->colision(this->pos.x+this->hspd*dt, this->pos.y, this->size.x, this->size.y)){
+                glm::vec4 args=walla->getArgs();
 
-    this->pos.x+=this->hspd*dt;
+                if(walla->type=="block"){
+                if(this->hspd>0.0f){
+                    this->pos.x=args.x-args.z/2.0f-this->size.x/2.0f;
+                }
+                if(this->hspd<0.0f){
+                    this->pos.x=args.x+args.z/2.0f+this->size.x/2.0f;
+                }
+                this->hspd=0.0f;
+            }
+        }
+    }
+    this->pos.x+=hspd*dt;
+    this->hspd=0.0f;
+    for(int i=0; i<objs.size(); i++){
+        GameObject *walla=objs[i];
+        if(walla->type=="block"){
+            if(walla->colision(this->pos.x, this->pos.y+this->vspd*dt, this->size.x, this->size.y)){
+                glm::vec4 args=walla->getArgs();
+                if(this->vspd>0.0f){
+                    this->pos.y=args.y-args.w/2.0f-this->size.y/2.0f;
+                }
+                if(this->vspd<0.0f){
+                    this->pos.y=args.y+args.w/2.0f+this->size.y/2.0f;
+                    this->jump=this->maxJump;
+                }
+                this->vspd=0.0f;
+            }
+        }
+    }
     this->pos.y+=this->vspd*dt;
 }
 

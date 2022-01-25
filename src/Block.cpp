@@ -39,6 +39,8 @@ Block::Block(Shader *shader, Cam *cam, float x, float y, int tile):GameObject(sh
     this->mesh=new Mesh(plane, planeI, textures);
     this->pos.x=x;
     this->pos.y=y;
+
+    this->type="block";
 }
 
 void Block::render(){
