@@ -7,9 +7,9 @@ class GameObject{
         GameObject(Shader *shader, Cam *cam){};
         virtual void update(float dt){};
         virtual void render(){};
-
+        virtual void physics(std::vector<GameObject*> objs){};
+    protected:
         glm::vec3 pos=glm::vec3(0.0f, 0.0f, 0.0f);
-        std::string type="none";
 };
 
 #endif

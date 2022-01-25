@@ -9,8 +9,8 @@
 class Player:public GameObject{
     public:
         Player(Shader *shader, Cam *cam, float x, float y);
-        void render();
-        void update(float dt);
+        void render() override;
+        void update(float dt) override;
     private:
         void move(float dt);
         void moveCam();

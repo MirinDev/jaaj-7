@@ -56,11 +56,8 @@ void Map::render(){
 
 void Map::update(float dt){
     for(int i=0; i<objs.size(); i++){
-        if(this->objs[i]->type=="block"){
-            this->objs[i]->update(dt);
-        }
-        if(this->objs[i]->type=="player"){
-            this->objs[i]->update(dt);
-        }
+        this->objs[i]->update(dt);
+
+        this->objs[i]->physics(objs);
     }
 }
