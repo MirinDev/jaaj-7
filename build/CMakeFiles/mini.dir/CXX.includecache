@@ -6,30 +6,6 @@
 
 #IncludeRegexTransform: 
 
-../include/Block.h
-GameObject.h
--
-Plane.h
--
-
-../include/Game.h
-iostream
--
-glad/glad.h
--
-SDL2/SDL.h
--
-SDL2/SDL_opengl.h
--
-Mesh.h
--
-Plane.h
--
-file.h
--
-Map.h
--
-
 ../include/GameObject.h
 Mesh.h
 -
@@ -40,14 +16,6 @@ stdint.h
 inttypes.h
 -
 stdint.h
--
-
-../include/Map.h
-Player.h
--
-Block.h
--
-file.h
 -
 
 ../include/Player.h
@@ -1704,22 +1672,6 @@ emmintrin.h
 intrin.h
 -
 arm_neon.h
--
-
-/home/jose/Área de Trabalho/jaaj 7/src/Block.cpp
-Block.h
--
-
-/home/jose/Área de Trabalho/jaaj 7/src/Game.cpp
-Game.h
--
-
-/home/jose/Área de Trabalho/jaaj 7/src/Main.cpp
-Game.h
--
-
-/home/jose/Área de Trabalho/jaaj 7/src/Map.cpp
-Map.h
 -
 
 /home/jose/Área de Trabalho/jaaj 7/src/Player.cpp

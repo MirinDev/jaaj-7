@@ -58,6 +58,6 @@ void Map::update(float dt){
     for(int i=0; i<objs.size(); i++){
         this->objs[i]->update(dt);
 
-        this->objs[i]->physics(objs);
+        this->objs[i]->physics(objs, dt);
     }
 }

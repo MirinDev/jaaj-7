@@ -58,7 +58,6 @@ void Player::update(float dt){
         this->fliph=false;
     }
 
-    this->move(dt);
     this->moveCam();
     this->updateState();
 
@@ -66,7 +65,7 @@ void Player::update(float dt){
     this->run->update(dt);
 }
 
-void Player::move(float dt){
+void Player::physics(std::vector<GameObject*> objs, float dt){
     if(this->pos.y+this->vspd*dt<-1.0f){
         this->jump=this->maxJump;
         this->vspd=0.0f;

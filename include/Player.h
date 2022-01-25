@@ -11,6 +11,7 @@ class Player:public GameObject{
         Player(Shader *shader, Cam *cam, float x, float y);
         void render() override;
         void update(float dt) override;
+        void physics(std::vector<GameObject*> objs, float dt) override;
     private:
         void move(float dt);
         void moveCam();
