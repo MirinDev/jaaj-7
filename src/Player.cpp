@@ -9,10 +9,10 @@ Player::Player(Shader *shader, Cam *cam, float x, float y):GameObject(shader, ca
     this->cam=cam;
 
     std::vector<Texture> texturesRun{
-        Texture(("."+bar+"res"+bar+"run1.png").c_str(), GL_CLAMP_TO_BORDER, GL_NEAREST, 0, "tex")
+        Texture(("."+bar+"res"+bar+"images"+bar+"run1.png").c_str(), GL_CLAMP_TO_BORDER, GL_NEAREST, 0, "tex")
     };
     std::vector<Texture> texturesIdle{
-        Texture(("."+bar+"res"+bar+"idle1.png").c_str(), GL_CLAMP_TO_BORDER, GL_NEAREST, 0, "tex")
+        Texture(("."+bar+"res"+bar+"images"+bar+"idle1.png").c_str(), GL_CLAMP_TO_BORDER, GL_NEAREST, 0, "tex")
     };
 
     this->idle=new SpriteSheet(shader, cam, texturesIdle, Sheet{0, 0, 32, 32, 0.25f});
@@ -62,7 +62,12 @@ void Player::update(float dt){
         this->fliph=false;
     }
 
-    this->moveCam();
+    if(keys[SDL_SCANCODE_KP_ENTER]){
+        this->seramovecam=!this->seramovecam;
+    }
+    if(this->seramovecam){
+        this->moveCam();        
+    }
     this->updateState();
 
     this->idle->update(dt);

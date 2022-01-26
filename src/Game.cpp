@@ -15,19 +15,19 @@ Game::Game(int width, int height, const char *title, bool resize){
 
     this->cam=new Cam();
     this->cam->pos.z=-4.0f;
-    this->shader=new Shader(("."+bar+"res"+bar+"image.frag").c_str(), ("."+bar+"res"+bar+"image.vert").c_str());
+    this->shader=new Shader(("."+bar+"res"+bar+"shaders"+bar+"image.frag").c_str(), ("."+bar+"res"+bar+"shaders"+bar+"image.vert").c_str());
 
     std::vector<Texture> textures{
-        Texture(("."+bar+"res"+bar+"engine.png").c_str(), GL_REPEAT, GL_LINEAR, 0, "tex")
+        Texture(("."+bar+"res"+bar+"images"+bar+"engine.png").c_str(), GL_REPEAT, GL_LINEAR, 0, "tex")
     };
     std::vector<Texture> textureBack{
-        Texture(("."+bar+"res"+bar+"back.png").c_str(), GL_REPEAT, GL_NEAREST, 0, "tex")
+        Texture(("."+bar+"res"+bar+"images"+bar+"back.png").c_str(), GL_REPEAT, GL_NEAREST, 0, "tex")
     };
     
     this->mesh=new Mesh(createPlane(textures[0].getWidth()/textures[0].getHeight(), 1.0f, 0.0f, 0.0f, 1.0f, 1.0f), planeI, textures);
     this->mesh2=new Mesh(createPlane(textureBack[0].getWidth()/textureBack[0].getHeight()*10.0f, 1.0f, 0.0f, 0.0f, 10.0f, 1.0f), planeI, textureBack);
 
-    this->map=new Map(("."+bar+"res"+bar+"map.txt").c_str(), shader, cam);
+    this->map=new Map(("."+bar+"res"+bar+"maps"+bar+"map.txt").c_str(), shader, cam);
 
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_MULTISAMPLE);
@@ -77,7 +77,7 @@ void Game::render(){
 void Game::update(){
     this->map->update(dt);
     
-    //this->cam->update(this->dt, this->window);
+    this->cam->update(this->dt, this->window);
 
     this->dt=float(SDL_GetTicks()-lastTime)/1000.0f;
     if(this->lastTime==0){

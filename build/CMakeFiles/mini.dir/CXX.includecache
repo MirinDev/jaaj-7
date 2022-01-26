@@ -6,6 +6,12 @@
 
 #IncludeRegexTransform: 
 
+../include/Block.h
+GameObject.h
+-
+Plane.h
+-
+
 ../include/GameObject.h
 Mesh.h
 -
@@ -16,16 +22,6 @@ stdint.h
 inttypes.h
 -
 stdint.h
--
-
-../include/Player.h
-GameObject.h
--
-file.h
--
-SpriteSheet.h
--
-Key.h
 -
 
 ../include/engine/Cam.h
@@ -98,16 +94,6 @@ iostream
 cerrno
 -
 file.h
--
-
-../include/engine/SpriteSheet.h
-glad/glad.h
--
-Mesh.h
--
-Plane.h
--
-iostream
 -
 
 ../include/engine/Texture.h
@@ -1674,7 +1660,7 @@ intrin.h
 arm_neon.h
 -
 
-/home/jose/Área de Trabalho/jaaj 7/src/Player.cpp
-Player.h
+/home/jose/Área de Trabalho/jaaj 7/src/Block.cpp
+Block.h
 -
 

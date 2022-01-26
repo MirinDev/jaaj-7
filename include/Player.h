@@ -16,16 +16,13 @@ class Player:public GameObject{
         void move(float dt);
         void moveCam();
         void updateState();
-        
-        Shader *shader;
-        Cam *cam;
 
         SpriteSheet *idle;
         SpriteSheet *run;
 
         std::string state="idle";
         float spd=6.0f;
-        float grv=6.0f;
+        float grv=8.0f;
         int jump=0;
         int maxJump=2;
 
@@ -34,6 +31,8 @@ class Player:public GameObject{
         bool jumpp=false;
 
         bool fliph=false;
+
+        bool seramovecam=false;
 };
 
 #endif
