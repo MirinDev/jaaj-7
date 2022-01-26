@@ -95,5 +95,8 @@ void Game::poolEvents(){
         if(this->event.type==SDL_QUIT){
             isRunning=false;
         }
+        if(this->event.type==SDL_KEYDOWN && this->event.key.keysym.sym==SDLK_F11){
+            SDL_SetWindowFullscreen(this->window, SDL_WINDOW_FULLSCREEN_DESKTOP);
+        }
     }
 }
