@@ -77,7 +77,7 @@ void Game::render(){
 void Game::update(){
     this->map->update(dt);
     
-    this->cam->update(this->dt, this->window);
+    //this->cam->update(this->dt, this->window);
 
     this->dt=float(SDL_GetTicks()-lastTime)/1000.0f;
     if(this->lastTime==0){

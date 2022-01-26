@@ -32,7 +32,7 @@ class Player:public GameObject{
 
         bool fliph=false;
 
-        bool seramovecam=false;
+        bool seramovecam=true;
 };
 
 #endif

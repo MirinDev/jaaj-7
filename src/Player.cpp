@@ -63,7 +63,7 @@ void Player::update(float dt){
     }
 
     if(keys[SDL_SCANCODE_KP_ENTER]){
-        this->seramovecam=!this->seramovecam;
+        //this->seramovecam=!this->seramovecam;
     }
     if(this->seramovecam){
         this->moveCam();        

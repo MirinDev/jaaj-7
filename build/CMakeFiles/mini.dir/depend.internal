@@ -15,6 +15,7 @@ CMakeFiles/mini.dir/src/Block.cpp.o
  ../include/engine/Mesh.h
  ../include/engine/Plane.h
  ../include/engine/Shader.h
+ ../include/engine/SpriteSheet.h
  ../include/engine/Texture.h
  ../include/engine/VAO.h
  ../include/engine/VBO.h
