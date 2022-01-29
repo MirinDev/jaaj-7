@@ -1286,6 +1286,18 @@
 			"value" : "/usr/local/lib/cmake/SDL2"
 		},
 		{
+			"name" : "SDL_LIBRARIES_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for SDL_LIBRARIES."
+				}
+			],
+			"type" : "PATH",
+			"value" : "SDL_LIBRARIES_DIR-NOTFOUND"
+		},
+		{
 			"name" : "mini_BINARY_DIR",
 			"properties" : 
 			[

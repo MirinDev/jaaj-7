@@ -13,5 +13,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I"/home/jose/Área de Trabalho/jaaj 7/mini" -I"/home/jose/Área de Trabalho/jaaj 7/include" -I"/home/jose/Área de Trabalho/jaaj 7/include/engine" -I/usr/local/include/SDL2
 
-CXX_FLAGS = -g -std=gnu++17
+CXX_FLAGS = -g
 

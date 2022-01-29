@@ -51,23 +51,19 @@ void Player::update(float dt){
     }
     this->jumpp=bool(keys[SDL_SCANCODE_C]);
     
-    if(this->vspd>-this->grv){
+    if(this->vspd>-this->grv)
         this->vspd-=1.0f;
-    }
 
-    if(this->hspd>0){
+    if(this->hspd>0)
         this->fliph=true;
-    }
-    if(this->hspd<0){
+    
+    if(this->hspd<0)
         this->fliph=false;
-    }
 
-    if(keys[SDL_SCANCODE_KP_ENTER]){
-        //this->seramovecam=!this->seramovecam;
-    }
-    if(this->seramovecam){
-        this->moveCam();        
-    }
+
+    if(this->seramovecam)
+        this->moveCam();  
+          
     this->updateState();
 
     this->idle->update(dt);

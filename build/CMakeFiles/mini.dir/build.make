@@ -189,6 +189,8 @@ mini: CMakeFiles/mini.dir/src/glad.c.o
 mini: CMakeFiles/mini.dir/src/std_image.cpp.o
 mini: CMakeFiles/mini.dir/build.make
 mini: /usr/lib/x86_64-linux-gnu/libGL.so
+mini: /usr/local/lib/libSDL2main.a
+mini: /usr/local/lib/libSDL2-2.0.so.0.18.2
 mini: CMakeFiles/mini.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/jose/Área de Trabalho/jaaj 7/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable mini"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mini.dir/link.txt --verbose=$(VERBOSE)

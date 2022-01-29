@@ -234,6 +234,9 @@ OPENGL_xmesa_INCLUDE_DIR:PATH=OPENGL_xmesa_INCLUDE_DIR-NOTFOUND
 //The directory containing a CMake configuration file for SDL2.
 SDL2_DIR:PATH=/usr/local/lib/cmake/SDL2
 
+//The directory containing a CMake configuration file for SDL_LIBRARIES.
+SDL_LIBRARIES_DIR:PATH=SDL_LIBRARIES_DIR-NOTFOUND
+
 //Value Computed by CMake
 mini_BINARY_DIR:STATIC=/home/jose/Área de Trabalho/jaaj 7/build
 

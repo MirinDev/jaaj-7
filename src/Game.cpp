@@ -9,7 +9,9 @@ Game::Game(int width, int height, const char *title, bool resize){
     SDL_GL_SetAttribute(SDL_GL_MULTISAMPLESAMPLES, 4);
 
     this->window=SDL_CreateWindow(title, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, height, SDL_WINDOW_OPENGL | (resize ? SDL_WINDOW_RESIZABLE : SDL_WINDOW_SHOWN));
-    SDL_GLContext context=SDL_GL_CreateContext(window);
+    SDL_GLContext windowContext=SDL_GL_CreateContext(this->window);
+    //this->debug=SDL_CreateWindow("debug", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 600, 600, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE);
+    //SDL_GLContext debugContext=SDL_GL_CreateContext(this->debug);
 
     gladLoadGL();
 
@@ -50,11 +52,11 @@ void Game::run(){
 
 void Game::render(){
     int w, h;
-    SDL_GetWindowSize(window, &w, &h);
+    SDL_GetWindowSize(this->window, &w, &h);
     
     this->cam->updateMatrixPespective(45.0f, float(w)/float(h), 0.1f, 1000.0f);
     //this->cam->updateMatrixOrtografic(4.0f, float(w)/float(h), 0.1f, 1000.0f);
-    
+
     glViewport(0, 0, w, h);
     glClearColor(0.01f, 0.1f, 0.18f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -70,8 +72,11 @@ void Game::render(){
     glUniformMatrix4fv(glGetUniformLocation(this->shader->getID(), "model"), 1, GL_FALSE, glm::value_ptr(model2));
     this->mesh2->draw(shader, cam);
 
-
     SDL_GL_SwapWindow(this->window);
+    //glClearColor(0.01f, 0.1f, 0.18f, 1.0f);
+    //glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+    //SDL_GL_SwapWindow(this->debug);
 }
 
 void Game::update(){
@@ -87,16 +92,15 @@ void Game::update(){
 }
 
 void Game::quit(){
+    SDL_DestroyWindow(this->window);
+    SDL_DestroyWindow(this->debug);
     SDL_Quit();
 }
 
 void Game::poolEvents(){
     while(SDL_PollEvent(&this->event)){
-        if(this->event.type==SDL_QUIT){
-            isRunning=false;
-        }
-        if(this->event.type==SDL_KEYDOWN && this->event.key.keysym.sym==SDLK_F11){
-            SDL_SetWindowFullscreen(this->window, SDL_WINDOW_FULLSCREEN_DESKTOP);
+        if(this->event.window.windowID==SDL_GetWindowID(this->window) && this->event.window.event==SDL_WINDOWEVENT_CLOSE){
+            this->isRunning=false;
         }
     }
 }

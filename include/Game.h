@@ -21,6 +21,7 @@ class Game{
         void poolEvents();
     private:
         SDL_Window *window;
+        SDL_Window *debug;
         SDL_Event event;
         bool isRunning=true;
 
