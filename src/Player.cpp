@@ -42,7 +42,7 @@ void Player::update(float dt){
     this->hspd=(keys[SDL_SCANCODE_LEFT]-keys[SDL_SCANCODE_RIGHT])*this->spd;
     if(!this->jumpp && keys[SDL_SCANCODE_C]){
         if(this->jump>0){
-            this->vspd=12.0f;
+            this->vspd+=this->jumpForce;
             this->jump--;
         }
     }

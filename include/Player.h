@@ -21,10 +21,14 @@ class Player:public GameObject{
         SpriteSheet *run;
 
         std::string state="idle";
+
         float spd=6.0f;
         float grv=8.0f;
         int jump=0;
-        int maxJump=2;
+        int maxJump=1;
+        float jumpForce=14.0f;
+        float timeForJump=0.0f;
+        float defaultTimeForJump=0.2;
 
         float hspd=0.0f;
         float vspd=0.0f;

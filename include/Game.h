@@ -24,7 +24,6 @@ class Game{
         SDL_Window *debug;
 
         SDL_GLContext windowContext;
-        //SDL_GLContext debugContext;
 
         SDL_Event event;
         bool isRunning=true;

@@ -9,7 +9,7 @@ Game::Game(int width, int height, const char *title, bool resize){
     SDL_GL_SetAttribute(SDL_GL_MULTISAMPLESAMPLES, 4);
 
     this->window=SDL_CreateWindow(title, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, height, SDL_WINDOW_OPENGL | (resize ? SDL_WINDOW_RESIZABLE : SDL_WINDOW_SHOWN));
-    this->debug=SDL_CreateWindow("debug", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 600, 600, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE);
+    //this->debug=SDL_CreateWindow("debug", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 600, 600, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE);
     this->windowContext=SDL_GL_CreateContext(this->window);
 
     gladLoadGL();
@@ -17,9 +17,10 @@ Game::Game(int width, int height, const char *title, bool resize){
     this->cam=new Cam();
     this->cam->pos.z=-4.0f;
 
-    this->debugCam=new Cam();
+    //this->debugCam=new Cam();
 
-    this->shader=new Shader(("."+bar+"res"+bar+"shaders"+bar+"image.frag").c_str(), ("."+bar+"res"+bar+"shaders"+bar+"image.vert").c_str());
+    //this->shader=new Shader(("."+bar+"res"+bar+"shaders"+bar+"image.frag").c_str(), ("."+bar+"res"+bar+"shaders"+bar+"image.vert").c_str());
+    this->shader=new Shader(("."+bar+"res"+bar+"shaders"+bar+"defalt.frag").c_str(), ("."+bar+"res"+bar+"shaders"+bar+"defalt.vert").c_str());
 
     std::vector<Texture> textures{
         Texture(("."+bar+"res"+bar+"images"+bar+"engine.png").c_str(), GL_REPEAT, GL_LINEAR, 0, "tex")
@@ -59,7 +60,7 @@ void Game::render(){
     SDL_GetWindowSize(this->window, &w, &h);
 
     //window --------------------------------------------
-    SDL_GL_MakeCurrent(this->window, this->windowContext);
+    //SDL_GL_MakeCurrent(this->window, this->windowContext);
     
     this->cam->updateMatrixPespective(45.0f, float(w)/float(h), 0.1f, 1000.0f);
     //this->cam->updateMatrixOrtografic(4.0f, float(w)/float(h), 0.1f, 1000.0f);
@@ -68,7 +69,7 @@ void Game::render(){
     glClearColor(0.01f, 0.1f, 0.18f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-    this->map->setCam(this->cam);
+    //this->map->setCam(this->cam);
     this->map->render();
 
     glm::mat4 model=glm::mat4(1.0f);
@@ -84,13 +85,13 @@ void Game::render(){
     SDL_GL_SwapWindow(this->window);
 
     //debug window --------------------------------------
-    SDL_GL_MakeCurrent(this->debug, this->windowContext);
+    /*SDL_GL_MakeCurrent(this->debug, this->windowContext);
 
     int dw, dh;
     SDL_GetWindowSize(this->debug, &dw, &dh);
 
     this->debugCam->updateMatrixPespective(45.0f, float(dw)/float(dh), 0.1f, 1000.0f);
-    //this->cam->updateMatrixOrtografic(4.0f, float(w)/float(h), 0.1f, 1000.0f);
+    this->cam->updateMatrixOrtografic(4.0f, float(w)/float(h), 0.1f, 1000.0f);
 
     glViewport(0, 0, dw, dh);
     glClearColor(0.01f, 0.1f, 0.18f, 1.0f);
@@ -99,15 +100,15 @@ void Game::render(){
     this->map->setCam(this->debugCam);
     this->map->render();
 
-    SDL_GL_SwapWindow(this->debug);
+    SDL_GL_SwapWindow(this->debug);*/
 }
 
 void Game::update(){
-    this->map->setCam(this->cam);
+    //this->map->setCam(this->cam);
     this->map->update(dt);
     
     //this->cam->update(this->dt, this->window);
-    this->debugCam->update(this->dt, this->debug);
+    //this->debugCam->update(this->dt, this->debug);
 
     this->dt=float(SDL_GetTicks()-lastTime)/1000.0f;
     if(this->lastTime==0){
@@ -118,13 +119,17 @@ void Game::update(){
 
 void Game::quit(){
     SDL_DestroyWindow(this->window);
-    SDL_DestroyWindow(this->debug);
+    //SDL_DestroyWindow(this->debug);
     SDL_Quit();
 }
 
 void Game::poolEvents(){
     while(SDL_PollEvent(&this->event)){
-        if(this->event.window.event==SDL_WINDOWEVENT_CLOSE){//this->event.window.windowID==SDL_GetWindowID(this->window)
+        //if(this->event.window.event==SDL_WINDOWEVENT_CLOSE){//this->event.window.windowID==SDL_GetWindowID(this->window)
+            //this->isRunning=false;
+        //}
+
+        if(this->event.type==SDL_QUIT){
             this->isRunning=false;
         }
     }

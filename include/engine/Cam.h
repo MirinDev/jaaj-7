@@ -46,23 +46,26 @@ class Cam{
             int w, h;
             SDL_GetWindowSize(window, &w, &h);
             int x, y;
-            SDL_GetMouseState(&x, &y);
-            if(this->first){
-                x=w/2;
-                y=h/2;
-                this->first=false;
+            if(SDL_GetMouseState(&x, &y)){
+                if(this->first){
+                    x=w/2;
+                    y=h/2;
+                    this->first=false;
+                }
+
+                float sx=(float(x)-float(w)/2.0f)/float(w)*sens, sy=(float(y)-float(h)/2.0f)/float(h)*sens;
+
+                glm::vec3 newFront=glm::rotate(this->front, glm::radians(-sy), glm::normalize(glm::cross(front, up)));
+
+                if(std::abs(glm::angle(newFront, this->up)-glm::radians(90.0f))<=glm::radians(89.0f)){
+                    this->front=newFront;
+                }
+                SDL_WarpMouseInWindow(window, w/2, h/2);
+
+                this->front=glm::rotate(this->front, glm::radians(-sx), this->up);
+            }else{
+                this->first=true;
             }
-
-            float sx=(float(x)-float(w)/2.0f)/float(w)*sens, sy=(float(y)-float(h)/2.0f)/float(h)*sens;
-
-            glm::vec3 newFront=glm::rotate(this->front, glm::radians(-sy), glm::normalize(glm::cross(front, up)));
-
-            if(std::abs(glm::angle(newFront, this->up)-glm::radians(90.0f))<=glm::radians(89.0f)){
-                this->front=newFront;
-            }
-            SDL_WarpMouseInWindow(window, w/2, h/2);
-
-            this->front=glm::rotate(this->front, glm::radians(-sx), this->up);
         }
 
         void updateMatrixPespective(float fov, float aspect, float near, float far){

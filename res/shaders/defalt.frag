@@ -18,7 +18,7 @@ struct Light{
 };
 
 uniform Light lights[]=Light[](
-	Light(vec3(0.0f, 0.0f, 0.0f), vec3(0.0f, 0.0f, 0.0f), vec4(0.0f, 0.0f, 0.0f, 0.0f), 0)
+	Light(vec3(4.0f, 4.0f, -4.0f), vec3(-1.0f, -1.0f, 1.0f), vec4(0.2f, 0.7f, 0.8f, 1.0f), 2)
 );
 
 float ambient=0.5f;
@@ -67,6 +67,7 @@ vec4 spotLight(vec3 position, vec3 dir, vec4 color){
 	float inten=clamp((angle-outerCone)/(innerCone-outerCone), 0.0f, 1.0f);
 	return (texture(tex, Uv)*(diffuse*inten+ambient)+texture(texSpec, Uv).r*specular*inten)*color;
 }
+
 void main(){
    if(texture(tex, Uv).a<0.1f){
        discard;
