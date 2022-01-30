@@ -1,10 +1,7 @@
 #include <Block.h>
 #include <SpriteSheet.h>
 
-Block::Block(Shader *shader, Cam *cam, float x, float y, int tile):GameObject(shader, cam){
-    this->shader=shader;
-    this->cam=cam;
-
+Block::Block(float x, float y, int tile){
     std::vector<Texture> textures{
         Texture(("."+bar+"res"+bar+"images"+bar+"block.png").c_str(), GL_CLAMP_TO_BORDER, GL_NEAREST, 0, "tex")
     };
@@ -45,7 +42,7 @@ Block::Block(Shader *shader, Cam *cam, float x, float y, int tile):GameObject(sh
     }
 
     this->mesh=new Mesh(plane, planeI, textures);
-    this->grama=new SpriteSheet(shader, cam, texturesGram, Sheet{0, 0, 32, 32, 0.25f});
+    this->grama=new SpriteSheet(texturesGram, Sheet{0, 0, 32, 32, 0.25f});
     this->pos.x=x;
     this->pos.y=y;
 
@@ -62,7 +59,7 @@ void Block::render(){
         glm::mat4 model2=glm::mat4(1.0f);
         model2=glm::translate(model2, this->pos+glm::vec3(0.0f, 0.6f, 0.1f));
         model2=glm::scale(model2, glm::vec3(0.6f, 0.6f, 0.6f));
-        this->grama->render(model2);
+        this->grama->render(this->shader, this->cam, model2);
     }
 }
 

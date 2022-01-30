@@ -1,0 +1,37 @@
+[
+{
+  "directory": "/home/jose/Área de Trabalho/jaaj 7/build",
+  "command": "/bin/clang++-13  -I\"/home/jose/Área de Trabalho/jaaj 7/mini\" -I\"/home/jose/Área de Trabalho/jaaj 7/include\" -I\"/home/jose/Área de Trabalho/jaaj 7/include/engine\" -I/usr/local/include/SDL2 -g -o CMakeFiles/mini.dir/src/Main.cpp.o -c \"/home/jose/Área de Trabalho/jaaj 7/src/Main.cpp\"",
+  "file": "/home/jose/Área de Trabalho/jaaj 7/src/Main.cpp"
+},
+{
+  "directory": "/home/jose/Área de Trabalho/jaaj 7/build",
+  "command": "/bin/clang++-13  -I\"/home/jose/Área de Trabalho/jaaj 7/mini\" -I\"/home/jose/Área de Trabalho/jaaj 7/include\" -I\"/home/jose/Área de Trabalho/jaaj 7/include/engine\" -I/usr/local/include/SDL2 -g -o CMakeFiles/mini.dir/src/Game.cpp.o -c \"/home/jose/Área de Trabalho/jaaj 7/src/Game.cpp\"",
+  "file": "/home/jose/Área de Trabalho/jaaj 7/src/Game.cpp"
+},
+{
+  "directory": "/home/jose/Área de Trabalho/jaaj 7/build",
+  "command": "/bin/clang++-13  -I\"/home/jose/Área de Trabalho/jaaj 7/mini\" -I\"/home/jose/Área de Trabalho/jaaj 7/include\" -I\"/home/jose/Área de Trabalho/jaaj 7/include/engine\" -I/usr/local/include/SDL2 -g -o CMakeFiles/mini.dir/src/Player.cpp.o -c \"/home/jose/Área de Trabalho/jaaj 7/src/Player.cpp\"",
+  "file": "/home/jose/Área de Trabalho/jaaj 7/src/Player.cpp"
+},
+{
+  "directory": "/home/jose/Área de Trabalho/jaaj 7/build",
+  "command": "/bin/clang++-13  -I\"/home/jose/Área de Trabalho/jaaj 7/mini\" -I\"/home/jose/Área de Trabalho/jaaj 7/include\" -I\"/home/jose/Área de Trabalho/jaaj 7/include/engine\" -I/usr/local/include/SDL2 -g -o CMakeFiles/mini.dir/src/Block.cpp.o -c \"/home/jose/Área de Trabalho/jaaj 7/src/Block.cpp\"",
+  "file": "/home/jose/Área de Trabalho/jaaj 7/src/Block.cpp"
+},
+{
+  "directory": "/home/jose/Área de Trabalho/jaaj 7/build",
+  "command": "/bin/clang++-13  -I\"/home/jose/Área de Trabalho/jaaj 7/mini\" -I\"/home/jose/Área de Trabalho/jaaj 7/include\" -I\"/home/jose/Área de Trabalho/jaaj 7/include/engine\" -I/usr/local/include/SDL2 -g -o CMakeFiles/mini.dir/src/Map.cpp.o -c \"/home/jose/Área de Trabalho/jaaj 7/src/Map.cpp\"",
+  "file": "/home/jose/Área de Trabalho/jaaj 7/src/Map.cpp"
+},
+{
+  "directory": "/home/jose/Área de Trabalho/jaaj 7/build",
+  "command": "/bin/clang-13  -I\"/home/jose/Área de Trabalho/jaaj 7/mini\" -I\"/home/jose/Área de Trabalho/jaaj 7/include\" -I\"/home/jose/Área de Trabalho/jaaj 7/include/engine\" -I/usr/local/include/SDL2 -g -o CMakeFiles/mini.dir/src/glad.c.o -c \"/home/jose/Área de Trabalho/jaaj 7/src/glad.c\"",
+  "file": "/home/jose/Área de Trabalho/jaaj 7/src/glad.c"
+},
+{
+  "directory": "/home/jose/Área de Trabalho/jaaj 7/build",
+  "command": "/bin/clang++-13  -I\"/home/jose/Área de Trabalho/jaaj 7/mini\" -I\"/home/jose/Área de Trabalho/jaaj 7/include\" -I\"/home/jose/Área de Trabalho/jaaj 7/include/engine\" -I/usr/local/include/SDL2 -g -o CMakeFiles/mini.dir/src/std_image.cpp.o -c \"/home/jose/Área de Trabalho/jaaj 7/src/std_image.cpp\"",
+  "file": "/home/jose/Área de Trabalho/jaaj 7/src/std_image.cpp"
+}
+]

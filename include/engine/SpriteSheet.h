@@ -16,20 +16,18 @@ struct Sheet{
 
 class SpriteSheet{
     public:
-        SpriteSheet(Shader *shader, Cam *cam, std::vector<Texture> textures, Sheet sheet){
-            this->shader=shader;
+        SpriteSheet(std::vector<Texture> textures, Sheet sheet){
             this->textures=textures;
             this->sheet=sheet;
-            this->cam=cam;
         }
-        void render(glm::mat4 model){
+        void render(Shader *shader, Cam *cam, glm::mat4 model){
             float sw=1.0f/(this->textures[0].getWidth()/this->sheet.frameWidth);
             float sh=1.0f/(this->textures[0].getHeight()/this->sheet.frameHeight);
 
             Mesh mesh(createPlane(1.0f, 1.0f, this->sheet.frameXPosition*sw, this->sheet.frameYPosition*sh, sw, sh), planeI, textures);
-            this->shader->use();
-            glUniformMatrix4fv(glGetUniformLocation(this->shader->getID(), "model"), 1, GL_FALSE, glm::value_ptr(model));
-            mesh.draw(this->shader, this->cam);
+            shader->use();
+            glUniformMatrix4fv(glGetUniformLocation(shader->getID(), "model"), 1, GL_FALSE, glm::value_ptr(model));
+            mesh.draw(shader, cam);
         }
         void update(float dt){
             if(this->time>=this->sheet.timeForFrame){
@@ -42,8 +40,6 @@ class SpriteSheet{
             this->time+=dt;
         }
     private:
-        Shader *shader;
-        Cam *cam;
         Sheet sheet;
         std::vector<Texture> textures;
 

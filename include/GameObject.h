@@ -4,7 +4,7 @@
 
 class GameObject{
     public:
-        GameObject(Shader *shader, Cam *cam){};
+        GameObject(){};
         virtual void update(float dt){};
         virtual void render(){
             glm::mat4 model=glm::mat4(1.0f);
@@ -16,6 +16,14 @@ class GameObject{
         bool colision(float x, float y, float w, float h){
             return (x+w/2.0f>this->pos.x-this->size.x/2.0f && x-w/2.0f<this->pos.x+this->size.x/2.0f && y+h/2.0f>this->pos.y-this->size.y/2.0f && y-h/2.0f<this->pos.y+this->size.y/2.0f);
         }
+
+        void setCam(Cam *cam){
+            this->cam=cam;
+        }
+        void setShader(Shader *shader){
+            this->shader=shader;
+        }
+
         glm::vec4 getArgs(){
             return glm::vec4(this->pos.x, this->pos.y, this->size.x, this->size.y);
         }

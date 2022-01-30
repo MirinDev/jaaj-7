@@ -4,10 +4,7 @@ float lerp(float a, float b, float f){
     return a+f*(b-a);
 }
 
-Player::Player(Shader *shader, Cam *cam, float x, float y):GameObject(shader, cam){
-    this->shader=shader;
-    this->cam=cam;
-
+Player::Player(float x, float y){
     std::vector<Texture> texturesRun{
         Texture(("."+bar+"res"+bar+"images"+bar+"run1.png").c_str(), GL_CLAMP_TO_BORDER, GL_NEAREST, 0, "tex")
     };
@@ -15,8 +12,8 @@ Player::Player(Shader *shader, Cam *cam, float x, float y):GameObject(shader, ca
         Texture(("."+bar+"res"+bar+"images"+bar+"idle1.png").c_str(), GL_CLAMP_TO_BORDER, GL_NEAREST, 0, "tex")
     };
 
-    this->idle=new SpriteSheet(shader, cam, texturesIdle, Sheet{0, 0, 32, 32, 0.25f});
-    this->run=new SpriteSheet(shader, cam, texturesRun, Sheet{0, 0, 32, 32, 0.14f});
+    this->idle=new SpriteSheet(texturesIdle, Sheet{0, 0, 32, 32, 0.25f});
+    this->run=new SpriteSheet(texturesRun, Sheet{0, 0, 32, 32, 0.14f});
 
     this->pos.x=x;
     this->pos.y=y;
@@ -34,10 +31,10 @@ void Player::render(){
     }
 
     if(this->state=="idle"){
-        this->idle->render(model);
+        this->idle->render(this->shader, this->cam, model);
     }
     if(this->state=="run"){
-        this->run->render(model);
+        this->run->render(this->shader, this->cam, model);
     }
 }
 

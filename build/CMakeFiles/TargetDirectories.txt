@@ -1,0 +1,3 @@
+/home/jose/Área de Trabalho/jaaj 7/build/CMakeFiles/rebuild_cache.dir
+/home/jose/Área de Trabalho/jaaj 7/build/CMakeFiles/edit_cache.dir
+/home/jose/Área de Trabalho/jaaj 7/build/CMakeFiles/mini.dir

@@ -22,10 +22,16 @@ class Game{
     private:
         SDL_Window *window;
         SDL_Window *debug;
+
+        SDL_GLContext windowContext;
+        //SDL_GLContext debugContext;
+
         SDL_Event event;
         bool isRunning=true;
 
         Cam *cam;
+        Cam *debugCam;
+        
         Shader *shader;
 
         Mesh *mesh;

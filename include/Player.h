@@ -8,7 +8,7 @@
 
 class Player:public GameObject{
     public:
-        Player(Shader *shader, Cam *cam, float x, float y);
+        Player(float x, float y);
         void render() override;
         void update(float dt) override;
         void physics(std::vector<GameObject*> objs, float dt) override;

@@ -6,7 +6,7 @@
 
 class Block: public GameObject{
     public:
-        Block(Shader *shader, Cam *cam, float x, float y, int tile);
+        Block(float x, float y, int tile);
         void update(float dt) override;
         void render() override;
     private:

@@ -6,9 +6,11 @@
 
 class Map{
     public:
-        Map(const char *file, Shader *shader, Cam *cam);
+        Map(const char *file);
         void render();
         void update(float dt);
+        void setCam(Cam *cam);
+        void setShader(Shader *shader);
     private:
         std::vector<GameObject*> objs;
 };
